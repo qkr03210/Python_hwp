@@ -1,21 +1,18 @@
 import win32com.client as win32
 import pymysql
 import os
-# conn = pymysql.connect(host='192.168.0.104',user='root',password='1234',db='hwp',charset='utf8')
-# try:
-#     sql = "select * from member where bn =%s"
-#     cursor = conn.cursor()
-#     cursor.execute(sql, ('2'))
-#     result=cursor.fetchall()
-#     # print(result)
-#     for row in result:
-#         r1=row[0]
-#         r2=row[1]
-#         r3=row[2]
-# except:
-#     pass
-# finally:
-#     conn.close()
+conn = pymysql.connect(host='192.168.0.104',user='root',password='1234',db='hwp',charset='utf8')
+try:
+    sql = "select * from member limit 0"
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    result=cursor.fetchall()
+    print(result)
+
+except:
+    pass
+finally:
+    conn.close()
 
 hwp = win32.gencache.EnsureDispatch("HWPFrame.HwpObject")
 hwp.RegisterModule("FilePathCheckDLL", "FilePathCheckerModule")
