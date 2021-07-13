@@ -1,0 +1,32 @@
+missing module named 'win32com.gen_py' - imported by win32com, D:\psj\ExeTest\venv\Lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_win32comgenpy.py
+missing module named 'multiprocessing.forking' - imported by D:\psj\ExeTest\venv\Lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_multiprocessing.py
+missing module named posix - imported by os, shutil, importlib._bootstrap_external, D:\psj\ExeTest\exeTest.py
+missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, D:\psj\ExeTest\exeTest.py
+missing module named 'org.python' - imported by pickle, D:\psj\ExeTest\exeTest.py, xml.sax
+missing module named readline - imported by cmd, code, pdb, D:\psj\ExeTest\exeTest.py
+missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio, asyncio.events, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes, D:\psj\ExeTest\exeTest.py
+missing module named _winreg - imported by platform, D:\psj\ExeTest\exeTest.py
+missing module named java - imported by platform, D:\psj\ExeTest\exeTest.py
+missing module named 'java.lang' - imported by platform, D:\psj\ExeTest\exeTest.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, D:\psj\ExeTest\exeTest.py
+missing module named resource - imported by posix, test.support, D:\psj\ExeTest\exeTest.py
+missing module named termios - imported by tty, getpass, D:\psj\ExeTest\exeTest.py
+missing module named _scproxy - imported by urllib.request, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn, D:\psj\ExeTest\exeTest.py
+missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn, D:\psj\ExeTest\exeTest.py
+missing module named _posixshmem - imported by multiprocessing.resource_tracker, multiprocessing.shared_memory, D:\psj\ExeTest\exeTest.py
+missing module named pwd - imported by posixpath, shutil, tarfile, pathlib, http.server, webbrowser, netrc, getpass, distutils.util, D:\psj\ExeTest\exeTest.py
+missing module named grp - imported by shutil, tarfile, pathlib, D:\psj\ExeTest\exeTest.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, zipimport, D:\psj\ExeTest\exeTest.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, zipimport, D:\psj\ExeTest\exeTest.py
+missing module named org - imported by copy, D:\psj\ExeTest\exeTest.py
+missing module named AppKit - imported by pyperclip
+missing module named Foundation - imported by pyperclip
+missing module named PyQt4 - imported by pyperclip
+missing module named PyQt5 - imported by pyperclip
+missing module named qtpy - imported by pyperclip
+missing module named gtk - imported by pyperclip
