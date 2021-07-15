@@ -65,7 +65,7 @@ for target,data in zip(column_name,sql_result):
         hwp.PutFieldText(target, data)
         print(target, data)
 
-hwp.SaveAs(os.path.join(os.getcwd(), filename+f"_{custom}.hwp")+".pdf", "PDF")  # 기존 파일명+_임의값.hwp.pdf 로 저장
+hwp.SaveAs(os.path.join(os.getcwd(), filename+f"_{custom}")+".pdf", "PDF")  # 기존 파일명+_임의값.hwp.pdf 로 저장
 # hwp.SaveAs(os.path.join(os.getcwd(), filename+f"_{custom}.hwp"))  # 기존 파일명+_임의값.hwp로 다시 저장
 # hwp.Quit()
 hwp.XHwpDocuments.Item(0).Close(isDirty=False)  # 탭 닫기
