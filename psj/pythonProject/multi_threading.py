@@ -8,8 +8,6 @@ import os
 
 class Main():
     def __init__(self):
-
-
         sub = SubMain()
 
         # th가 실행되고 th2가 실행이 되는데
@@ -40,21 +38,24 @@ class SubMain():
 
     def thread_fnc_myql(self):
         while True:
-            print('mysql 동작감지')
+            conn2 = pymysql.connect(host='192.168.0.104', user='root', password='1234', db='hwp', charset='utf8')
+            print('thread_fnc_myql 동작감지')
             sleep(0.5)
             try:
-                sql = "select ifnull( max(idx),0 ), input_queue.index from input_queue;"
-                cursor = self.conn.cursor()
+                print('thread_fnc_myql try 내부')
+                sql = "select ifnull( max(idx),0 ), input_queue.index, input_queue.idx, input_queue.name from input_queue;"
+                cursor = conn2.cursor()
                 cursor.execute(sql)
                 result = cursor.fetchall()
+                print(result[0][0])
                 if result[0][0] != 0:
-                    print(result[0][0])
-                    self.conn.close()
-                    threading.Thread(target=self.thread_mysql_delete(result[0][0])).start()
-                    threading.Thread(target=self.thread_fnc(result[0][1])).start()
+                    conn2.close()
+                    threading.Thread(target=self.thread_mysql_delete(result[0][2])).start()
+                    threading.Thread(target=self.thread_fnc(result[0][1],result[0][3])).start()
 
             except:
                 pass
+            print('thread_fnc_myql try 외부')
 
     def thread_mysql_delete(self,target):
         print(target)
@@ -71,7 +72,7 @@ class SubMain():
             conn2.commit()
             conn2.close()
 
-    def thread_fnc(self,number):
+    def thread_fnc(self,number,name):
         print('찾음')
         sql_result = []
         try:
@@ -90,8 +91,8 @@ class SubMain():
         # hwp = win32.Dispatch("HWPFrame.HwpObject")
         # dir="D:/Python_hwp/psj/pythonProject/"
 
-        filename = "근로자_자격취득신고서"
-        custom = "이름"
+        filename = f"{sql_result[0]}"
+        custom = f"{name}"
         # 처음 열고 복사본을 만든다
         hwp.Open(os.path.join(os.getcwd(), filename + ".hwp"))
         hwp.SaveAs(os.path.join(os.getcwd(), filename + f"_{custom}.hwp"))  # 기존 파일명+_임의값.hwp 로 저장
@@ -99,8 +100,8 @@ class SubMain():
         sleep(0.2)  # 0.1초 쉬어줌(꼭 필요)
         # shutil.copyfile(r"./근로자_자격취득신고서.hwp", r"./근로자_자격취득신고서_{}.hwp")
         hwp.Open(os.path.join(os.getcwd(), filename + f"_{custom}.hwp"))
-        # hwp.XHwpWindows.Item(0).Visible = True #화면에 보이게
-        hwp.XHwpWindows.Item(0).Visible = False  # 화면에 숨김
+        hwp.XHwpWindows.Item(0).Visible = True #화면에 보이게
+        # hwp.XHwpWindows.Item(0).Visible = False  # 화면에 숨김
         hwp.GetFieldList()
         field_list = hwp.GetFieldList().split("\x02")
         # print(field_list)
@@ -118,6 +119,7 @@ class SubMain():
         # hwp.SaveAs(os.path.join(os.getcwd(), filename+f"_{custom}.hwp"))  # 기존 파일명+_임의값.hwp로 다시 저장
         # hwp.Quit()
         hwp.XHwpDocuments.Item(0).Close(isDirty=False)  # 탭 닫기
+        hwp.Quit()
         print("문서 저장 완료")
 
         th=threading.Timer(0.5, self.thread_fnc_myql())
