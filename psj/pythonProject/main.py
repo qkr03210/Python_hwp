@@ -1,4 +1,5 @@
 #-*- encoding: utf-8 -*-
+# 한글문서 비교
 import os
 import difflib  # 두 개 문자열간의 차이점을 분석하는 데 쓸 수 있는 외장 라이브러리입니다. 설치되어 있어요.
 
