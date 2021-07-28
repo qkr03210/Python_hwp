@@ -59,7 +59,6 @@ class SubMain():
 
     def thread_mysql_delete(self,target):
         print(target)
-        print('삭제하고싶다')
         conn2 = pymysql.connect(host='192.168.0.104', user='root', password='1234', db='hwp', charset='utf8')
         try:
             sql = f"delete from input_queue where idx = {target}"
