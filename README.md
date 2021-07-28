@@ -81,4 +81,60 @@
     - DB에 있는 테이블 컬럼명을 가져옴
     - hwp -> pdf로 변환
     - threading을 활용하여 DB에 값이 들어오는지 실시간 파악
+    ```
+          CREATE TABLE `hwp_input` (
+        `filename` varchar(45) NOT NULL,
+        `체크` varchar(45) DEFAULT NULL,
+        `사업장관리번호` varchar(45) DEFAULT NULL,
+        `우편번호` varchar(45) DEFAULT NULL,
+        `명칭` varchar(45) DEFAULT NULL,
+        `단위사업장 명칭` varchar(45) DEFAULT NULL,
+        `영업소 명칭` varchar(45) DEFAULT NULL,
+        `소재지` varchar(45) DEFAULT NULL,
+        `전화번호` varchar(45) DEFAULT NULL,
+        `팩스번호` varchar(45) DEFAULT NULL,
+        `보험사무대행기관번호` varchar(45) DEFAULT NULL,
+        `보험사무대행기관명칭` varchar(45) DEFAULT NULL,
+        `하수급인 관리번호` varchar(45) DEFAULT NULL,
+        `성명1` varchar(45) DEFAULT NULL,
+        `주민등록번호1` varchar(45) DEFAULT NULL,
+        `국적1` varchar(45) DEFAULT NULL,
+        `체류자격1` varchar(45) DEFAULT NULL,
+        `월 소득액1` varchar(45) DEFAULT NULL,
+        `자격취득일1` varchar(45) DEFAULT NULL,
+        `국민연금자격취득부호1` varchar(45) DEFAULT NULL,
+        `국민연금특수직종부호1` varchar(45) DEFAULT NULL,
+        `국민연금직역연금부호1` varchar(45) DEFAULT NULL,
+        `건강보험자격취득부호1` varchar(45) DEFAULT NULL,
+        `건강보험감면부호1` varchar(45) DEFAULT NULL,
+        `건강보험회계명1` varchar(45) DEFAULT NULL,
+        `건강보험직종명1` varchar(45) DEFAULT NULL,
+        `직종부호1` varchar(45) DEFAULT NULL,
+        `1주소정근로시간1` varchar(45) DEFAULT NULL,
+        `계약종료연월1` varchar(45) DEFAULT NULL,
+        `보험료부과구분부호1` varchar(45) DEFAULT NULL,
+        `보험료부과구분사유1` varchar(45) DEFAULT NULL,
+        `년` varchar(45) DEFAULT NULL,
+        `월` varchar(45) DEFAULT NULL,
+        `일` varchar(45) DEFAULT NULL,
+        `신고인` varchar(45) DEFAULT NULL,
+        `신고인서명` varchar(45) DEFAULT NULL,
+        `보험사무대행기관` varchar(45) DEFAULT NULL,
+        `보험서명` varchar(45) DEFAULT NULL,
+        `idx` int(11) NOT NULL AUTO_INCREMENT,
+        PRIMARY KEY (`idx`)
+      ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+    ```
+  
+    ```
+        CREATE TABLE `input_queue` (
+      `idx` int(11) NOT NULL AUTO_INCREMENT,
+      `target` varchar(100) NOT NULL,
+      `index` int(11) NOT NULL,
+      `name` varchar(45) NOT NULL,
+      PRIMARY KEY (`idx`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+    ```
 </details>
