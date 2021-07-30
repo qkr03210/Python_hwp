@@ -81,6 +81,7 @@
     - DB에 있는 테이블 컬럼명을 가져옴
     - hwp -> pdf로 변환
     - threading을 활용하여 DB에 값이 들어오는지 실시간 파악
+  -사용한 DB table
     ```
           CREATE TABLE `hwp_input` (
         `filename` varchar(45) NOT NULL,
